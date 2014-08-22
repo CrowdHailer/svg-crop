@@ -28,11 +28,13 @@
   "homepage": "https://github.com/CrowdHailer/svg-crop",
   "devDependencies": {
     "minijasminenode2": "^1.0.0",
-    "jslint": "^0.6.2"
+    "jslint": "^0.6.2",
+    "proxyquire": "^1.0.1"
   },
   "dependencies": {
     "bbox": "^0.4.0",
     "xml2js": "^0.4.4",
-    "interpolate": "^0.1.0"
+    "interpolate": "^0.1.0",
+    "shelljs": "^0.3.0"
   }
 }

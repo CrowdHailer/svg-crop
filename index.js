@@ -1,7 +1,8 @@
 var readSVG = require('./lib/readDimensions');
 var BBox = require('bbox');
 var interpolate = require('interpolate');
-var fs = require('fs')
+var fs = require('fs');
+var shell = require('shelljs');
 
 var STRING_TEMPLATE = 'inkscape --export-area={x0}:{y0}:{x1}:{y1} --export-png=www/{output} --export-height={height} {raw}'; 
 
@@ -19,7 +20,7 @@ module.exports = function(array, originalPath){
                 height: copyDimensions.height,
                 raw: originalPath,
             })
-            console.log(str)
+            shell.exec(str);
         })
     })
 }

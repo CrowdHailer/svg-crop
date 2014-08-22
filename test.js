@@ -1,8 +1,16 @@
-var readSVG, BBox, dummy, crop;
+var readSVG, BBox, dummy, shellDummy, crop, proxyquire, shellStub;
+
 
 beforeEach(function () {
+    shellDummy = jasmine.createSpy();
+    shellStub = {
+        exec: function (command) {
+            shellDummy(command);
+        }
+    }
+    proxyquire = require('proxyquire');
     readSVG = require('./lib/readDimensions');
-    crop = require('./index');
+    crop = proxyquire('./index', {'shelljs': shellStub});
     BBox = require('bbox');
     dummy = jasmine.createSpy()
 });
@@ -22,5 +30,7 @@ describe('Reading and SVGs dimensions', function () {
 describe('Sending commands', function () {
     it('should log each command that gets executed', function () {
         crop([{path: 'a', width: 200, height: 100}, {path: 'b', width: 100, height: 100}], 'fixture/blank.svg')
+        expect(shellDummy).toHaveBeenCalledWith('inkscape --export-area=0:0:200:100 --export-png=www/a --export-height=100 fixture/blank.svg')
+        expect(shellDummy).toHaveBeenCalledWith('inkscape --export-area=50:0:150:100 --export-png=www/b --export-height=100 fixture/blank.svg')
     });
 });
