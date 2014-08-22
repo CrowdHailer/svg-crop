@@ -1,0 +1,36 @@
+{
+  "name": "svg-crop",
+  "version": "0.0.0",
+  "description": "Output cropped pngs from svg documents. Created for use with generating phonegap splashscreens and icons/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/CrowdHailer/svg-crop.git"
+  },
+  "keywords": [
+    "svg",
+    "crop",
+    "geometry",
+    "bounding-box",
+    "bbox",
+    "rectangle",
+    "splashscreen",
+    "icon"
+  ],
+  "author": "Peter Saxton",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CrowdHailer/svg-crop/issues"
+  },
+  "homepage": "https://github.com/CrowdHailer/svg-crop",
+  "devDependencies": {
+    "minijasminenode2": "^1.0.0",
+    "jslint": "^0.6.2"
+  },
+  "dependencies": {
+    "bbox": "^0.4.0"
+  }
+}
