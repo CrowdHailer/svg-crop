@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "bbox": "^0.4.0",
-    "xml2js": "^0.4.4"
+    "xml2js": "^0.4.4",
+    "interpolate": "^0.1.0"
   }
 }

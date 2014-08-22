@@ -1,7 +1,8 @@
-var readSVG, BBox, dummy;
+var readSVG, BBox, dummy, crop;
 
 beforeEach(function () {
-    readSVG = require('./index');
+    readSVG = require('./lib/readDimensions');
+    crop = require('./index');
     BBox = require('bbox');
     dummy = jasmine.createSpy()
 });
@@ -15,5 +16,11 @@ describe('Reading and SVGs dimensions', function () {
     it('should read page size if available', function () {
         readSVG('<?xml version="1.0" encoding="utf-8"?><svg width="400" height="300"></svg>', dummy)
         expect(dummy).toHaveBeenCalledWith(BBox.create(0, 0, 400, 300));
+    });
+});
+
+describe('Sending commands', function () {
+    it('should log each command that gets executed', function () {
+        crop([{path: 'a', width: 200, height: 100}, {path: 'b', width: 100, height: 100}], 'fixture/blank.svg')
     });
 });
