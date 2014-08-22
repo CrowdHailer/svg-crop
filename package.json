@@ -4,7 +4,7 @@
   "description": "Output cropped pngs from svg documents. Created for use with generating phonegap splashscreens and icons/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/minijasminenode2 test.js --verbose"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "jslint": "^0.6.2"
   },
   "dependencies": {
-    "bbox": "^0.4.0"
+    "bbox": "^0.4.0",
+    "xml2js": "^0.4.4"
   }
 }
