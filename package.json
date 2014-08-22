@@ -1,6 +1,6 @@
 {
   "name": "svg-crop",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "Output cropped pngs from svg documents. Created for use with generating phonegap splashscreens and icons",
   "main": "index.js",
   "scripts": {
